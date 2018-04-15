@@ -6,7 +6,7 @@ const Vue = require('vue')
 const globby = require('globby');
 const webpack = require('webpack')
 
-const context = require('./src/data/context')
+const contextData = require('./src/data/context')
 const { createBundleRenderer } = require('vue-server-renderer')
 
 const serverConfig = require('./webpack.server.config')
@@ -38,6 +38,8 @@ pages.forEach((page) => {
   const fileNameNoExt = fileName.substr(0, fileName.indexOf('.vue'))
   console.log(`page: ${fileNameNoExt}`)
 
+  contextData.url = fileNameNoExt === 'index' ? '/' : `/${fileNameNoExt}`
+
   // serverConfig.entry = page;
 
   webpack(serverConfig, function (err, stats) {
@@ -57,7 +59,7 @@ pages.forEach((page) => {
 
     // Step 3: Render the Vue instance to HTML
     // in 2.5.0+, returns a Promise if no callback is passed:
-    renderer.renderToString(context).then(html => {
+    renderer.renderToString(contextData).then(html => {
       // write the html
       fs.writeFileSync(path.resolve(`./dist/${fileNameNoExt}.html`), html, 'utf-8')
     }).catch(err => {

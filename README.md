@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://github.com/aozora/michetta" target="_blank">
+    <img width="280" src="https://github.com/aozora/michetta/blob/master/logo.jpg" alt="logo">
+  </a>
+</p>
+
 # michetta
 Michetta is a simple static site generator based on Vue SFC and SSR for templating.
 Michetta [miˈketta] (also known as rosetta [roˈzetta] "small rose") is an Italian white bread, recognizable from its bulged shape.

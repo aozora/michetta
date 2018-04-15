@@ -3,30 +3,28 @@
     <!--<top-nav v-if="!isLogin"></top-nav>-->
     <!--<main-menu v-if="!isLogin"></main-menu>-->
 
-    <!--<transition name="page-fade" mode="out-in">-->
-      <!--<router-view></router-view>-->
-    <!--</transition>-->
+    <router-view></router-view>
 
     <!--<main-footer></main-footer>-->
   </div>
 </template>
 
 <script>
-  // import MainMenu from './components/MainMenu';
-  // import TopNav from './components/TopNav';
-  // import MainFooter from './components/MainFooter';
+// import MainMenu from './components/MainMenu';
+// import TopNav from './components/TopNav';
+// import MainFooter from './components/MainFooter';
 
-  export default {
-    name: 'app',
+export default {
+  name: 'app',
 
-    components: {
-      // TopNav,
-      // MainMenu,
-      // MainFooter
-    }
-  };
+  components: {
+    // TopNav,
+    // MainMenu,
+    // MainFooter
+  }
+};
 </script>
 
 <!--<style lang="scss">-->
-  <!--@import 'assets/scss/app.scss';-->
+<!--@import 'assets/scss/app.scss';-->
 <!--</style>-->

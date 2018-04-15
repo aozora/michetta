@@ -1,14 +1,11 @@
+// import { createApp } from './app';
+
 const fs = require('fs')
 const path = require('path')
-// const Vue = require('vue')
+const Vue = require('vue')
 const globby = require('globby');
 const webpack = require('webpack')
 
-// Create a renderer
-// const renderer = require('vue-server-renderer').createRenderer()
-// const renderer = require('vue-server-renderer').createRenderer({
-//   template: fs.readFileSync('./src/layout/layout.html', 'utf-8')
-// })
 const context = require('./src/data/context')
 const { createBundleRenderer } = require('vue-server-renderer')
 
@@ -41,6 +38,8 @@ pages.forEach((page) => {
   const fileNameNoExt = fileName.substr(0, fileName.indexOf('.vue'))
   console.log(`page: ${fileNameNoExt}`)
 
+  // serverConfig.entry = page;
+
   webpack(serverConfig, function (err, stats) {
     if (err) {
       throw err
@@ -59,12 +58,8 @@ pages.forEach((page) => {
     // Step 3: Render the Vue instance to HTML
     // in 2.5.0+, returns a Promise if no callback is passed:
     renderer.renderToString(context).then(html => {
-      // page title will be "Hello"
-      // with meta tags injected
-      //console.log(html)
-
+      // write the html
       fs.writeFileSync(path.resolve(`./dist/${fileNameNoExt}.html`), html, 'utf-8')
-
     }).catch(err => {
       console.error(err)
     })

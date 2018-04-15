@@ -1,13 +1,18 @@
-// universal app
+// app.js
 import Vue from 'vue'
 import App from './App.vue'
+import { createRouter } from './router'
 
-// export a factory function for creating fresh app, router and store
-// instances
 export function createApp () {
+  // create router instance
+  const router = createRouter()
+
   const app = new Vue({
-    // the root instance simply renders the App component.
+    // inject router into root Vue instance
+    router,
     render: h => h(App)
   })
-  return { app }
+
+  // return both the app and the router
+  return { app, router }
 }

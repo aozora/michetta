@@ -1,8 +1,8 @@
 {
-  "name": "vue-ssr-static",
+  "name": "michetta",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Michetta is a simple static site generator based on Vue SFC and SSR for templating.",
+  "main": "build.js",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -17,6 +17,7 @@
     "url-loader": "^1.0.1",
     "vue": "^2.5.16",
     "vue-loader": "^14.2.2",
+    "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.16",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",

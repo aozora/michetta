@@ -2,6 +2,13 @@
   "name": "michetta",
   "version": "1.0.0",
   "description": "Michetta is a simple static site generator based on Vue SFC and SSR for templating.",
+  "scripts": {
+    "build": "node build",
+    "prod": "cross-env NODE_ENV=production node build",
+    "webpack": "cross-env NODE_ENV=development webpack --config webpack.server.config.js"
+  },
+  "author": "",
+  "license": "ISC",
   "main": "build.js",
   "dependencies": {},
   "devDependencies": {
@@ -10,6 +17,7 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.6.1",
+    "chokidar": "^2.0.3",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "eslint": "^4.15.0",
@@ -23,6 +31,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "globby": "^8.0.1",
+    "memory-fs": "^0.4.1",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "vue": "^2.5.16",
@@ -35,11 +44,5 @@
     "webpack-cli": "^2.0.14",
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.7.2"
-  },
-  "scripts": {
-    "build": "node build",
-    "webpack": "cross-env NODE_ENV=development webpack --config webpack.server.config.js"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

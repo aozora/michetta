@@ -70,7 +70,7 @@ module.exports = {
   },
   plugins: isProd
     ? [
-      new VueLoaderPlugin(),
+      // new VueLoaderPlugin(),
       // new webpack.optimize.UglifyJsPlugin({
       //   compress: { warnings: false }
       // }),

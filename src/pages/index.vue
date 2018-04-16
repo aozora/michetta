@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>Main Title</h1>
+    <h1>Home Page</h1>
     <p>This is a SSR !!</p>
   </main>
 </template>

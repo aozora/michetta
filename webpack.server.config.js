@@ -6,7 +6,7 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
 module.exports = merge(baseConfig, {
   // Point entry to your app's server entry file
-  entry: './server.js',
+  entry: './entry-server.js',
 
   // This allows webpack to handle dynamic imports in a Node-appropriate
   // fashion, and also tells `vue-loader` to emit server-oriented code when

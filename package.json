@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Michetta is a simple static site generator based on Vue SFC and SSR for templating.",
   "scripts": {
-    "build": "node build",
+    "build": "node lib/build",
     "prod": "cross-env NODE_ENV=production node build",
     "webpack": "cross-env NODE_ENV=development webpack --config webpack.server.config.js"
   },
@@ -36,6 +36,7 @@
     "fs-extra": "^5.0.0",
     "globby": "^8.0.1",
     "memory-fs": "^0.4.1",
+    "readline": "^1.3.0",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "vue": "^2.5.16",
@@ -47,6 +48,7 @@
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
     "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "yaml-front-matter": "^4.0.0"
   }
 }

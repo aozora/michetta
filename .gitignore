@@ -128,4 +128,5 @@ GitHub.sublime-settings
 
 public/*
 dist
+.temp
 

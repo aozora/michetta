@@ -1,55 +1,108 @@
 {
-  "name": "michetta",
-  "version": "1.0.0",
-  "description": "Michetta is a simple static site generator based on Vue SFC and SSR for templating.",
-  "scripts": {
-    "build": "node lib/build",
-    "prod": "cross-env NODE_ENV=production node build",
-    "webpack": "cross-env NODE_ENV=development webpack --config webpack.server.config.js"
+  "name": "vuepress",
+  "version": "0.5.1",
+  "description": "Minimalistic doc generator with Vue component based layout system",
+  "main": "lib/index.js",
+  "bin": {
+    "vuepress": "bin/vuepress.js"
   },
-  "author": "Marcello Palmitessa",
+  "scripts": {
+    "dev": "node bin/vuepress dev docs",
+    "build": "node bin/vuepress build docs",
+    "lint": "eslint bin lib test",
+    "prepublishOnly": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vuepress.git"
+  },
+  "keywords": [
+    "documentation",
+    "vue",
+    "generator"
+  ],
+  "author": "Evan You",
   "license": "MIT",
-  "main": "build.js",
+  "bugs": {
+    "url": "https://github.com/vuejs/vuepress/issues"
+  },
+  "homepage": "https://github.com/vuejs/vuepress#readme",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "lib/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "test/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "autoprefixer": "^8.2.0",
+    "buble": "^0.19.3",
+    "buble-loader": "^0.5.0",
+    "chalk": "^2.3.2",
+    "chokidar": "^2.0.3",
+    "commander": "^2.15.1",
+    "connect-history-api-fallback": "^1.5.0",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "diacritics": "^1.3.0",
+    "es6-promise": "^4.2.4",
+    "escape-html": "^1.0.3",
+    "file-loader": "^1.1.11",
+    "fs-extra": "^5.0.0",
+    "globby": "^8.0.1",
+    "koa-connect": "^2.0.1",
+    "koa-mount": "^3.0.0",
+    "koa-static": "^4.0.2",
+    "loader-utils": "^1.1.0",
+    "lru-cache": "^4.1.2",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^4.0.0",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-table-of-contents": "^0.3.3",
+    "mini-css-extract-plugin": "^0.4.0",
+    "nprogress": "^0.2.0",
+    "object-assign": "^4.1.1",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "portfinder": "^1.0.13",
+    "postcss-loader": "^2.1.3",
+    "prismjs": "^1.13.0",
+    "register-service-worker": "^1.2.0",
+    "semver": "^5.5.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^1.0.1",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.0.0-rc.1",
+    "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.16",
+    "vue-template-compiler": "^2.5.16",
+    "vuepress-html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.5.0",
+    "webpack-chain": "^4.6.0",
+    "webpack-merge": "^4.1.2",
+    "webpack-serve": "^0.3.1",
+    "webpackbar": "^2.6.1",
+    "workbox-build": "^3.1.0",
+    "yaml-front-matter": "^4.0.0"
+  },
+  "devDependencies": {
+    "conventional-changelog": "^1.1.23",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "lint-staged": "^7.0.4",
+    "yorkie": "^1.0.3"
+  },
   "engines": {
     "node": ">=8"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-preset-env": "^1.6.1",
-    "chalk": "^2.4.0",
-    "chokidar": "^2.0.3",
-    "cross-env": "^5.1.4",
-    "css-loader": "^0.28.11",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "^11.3.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-import-resolver-webpack": "^0.8.3",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-vue": "^4.0.0",
-    "express": "^4.16.3",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "friendly-errors-webpack-plugin": "^1.7.0",
-    "fs-extra": "^5.0.0",
-    "globby": "^8.0.1",
-    "memory-fs": "^0.4.1",
-    "readline": "^1.3.0",
-    "style-loader": "^0.20.3",
-    "url-loader": "^1.0.1",
-    "vue": "^2.5.16",
-    "vue-loader": "^14.2.2",
-    "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.16",
-    "vue-style-loader": "^4.1.0",
-    "vue-template-compiler": "^2.5.16",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14",
-    "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.7.2",
-    "yaml-front-matter": "^4.0.0"
-  }
+  "browserslist": [
+    ">1%"
+  ]
 }

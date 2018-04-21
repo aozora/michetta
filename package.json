@@ -1,32 +1,32 @@
 {
-  "name": "vuepress",
-  "version": "0.5.1",
-  "description": "Minimalistic doc generator with Vue component based layout system",
+  "name": "michetta",
+  "version": "0.0.1",
+  "description": "Michetta is a simple static site generator based on Vue SFC and SSR for templating.",
   "main": "lib/index.js",
   "bin": {
-    "vuepress": "bin/vuepress.js"
+    "michetta": "bin/michetta.js"
   },
   "scripts": {
-    "dev": "node bin/vuepress dev docs",
-    "build": "node bin/vuepress build docs",
+    "dev": "node bin/michetta dev docs",
+    "build": "node bin/michetta build docs",
     "lint": "eslint bin lib test",
     "prepublishOnly": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vuepress.git"
+    "url": "git+https://github.com/aozora/michetta.git"
   },
   "keywords": [
     "documentation",
     "vue",
     "generator"
   ],
-  "author": "Evan You",
+  "author": "Marcello Palmitessa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vuepress/issues"
+    "url": "https://github.com/aozora/michetta/issues"
   },
-  "homepage": "https://github.com/vuejs/vuepress#readme",
+  "homepage": "https://github.com/aozora/michetta#readme",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },

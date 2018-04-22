@@ -17,7 +17,7 @@
     "url": "git+https://github.com/aozora/michetta.git"
   },
   "keywords": [
-    "documentation",
+    "static-site",
     "vue",
     "generator"
   ],
@@ -27,9 +27,6 @@
     "url": "https://github.com/aozora/michetta/issues"
   },
   "homepage": "https://github.com/aozora/michetta#readme",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
     "lib/**/*.js": [
       "eslint --fix",

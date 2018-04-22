@@ -1,42 +1,42 @@
-module.exports = function createServerConfig (options, cliOptions) {
-  const fs = require('fs')
-  const path = require('path')
-  const WebpackBar = require('webpackbar')
-  const createBaseConfig = require('./createBaseConfig')
-  const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
-  const CopyPlugin = require('copy-webpack-plugin')
+module.exports = function createServerConfig(options, cliOptions) {
+  const fs = require('fs');
+  const path = require('path');
+  const WebpackBar = require('webpackbar');
+  const createBaseConfig = require('./createBaseConfig');
+  const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
+  const CopyPlugin = require('copy-webpack-plugin');
 
-  const config = createBaseConfig(options, cliOptions, true /* isServer */)
-  const { sourceDir, outDir } = options
+  const config = createBaseConfig(options, cliOptions, true /* isServer */);
+  const { sourceDir, outDir } = options;
 
   config
     .target('node')
-    .externals([/^vue|vue-router$/])
+    .externals([/^vue|vue-router$/]);
 
   // no need to minimize server build
-  config.optimization.minimize(false)
+  config.optimization.minimize(false);
 
   config
     .entry('app')
-      .add(path.resolve(__dirname, '../app/serverEntry.js'))
+    .add(path.resolve(__dirname, '../app/serverEntry.js'));
 
   config.output
     .filename('server-bundle.js')
-    .libraryTarget('commonjs2')
+    .libraryTarget('commonjs2');
 
   config
     .plugin('ssr-server')
     .use(VueSSRServerPlugin, [{
-      filename: 'manifest/server.json'
-    }])
+      filename: 'manifest/server.json',
+    }]);
 
-  const publicDir = path.resolve(sourceDir, '.vuepress/public')
+  const publicDir = path.resolve(sourceDir, '.vuepress/public');
   if (fs.existsSync(publicDir)) {
     config
       .plugin('copy')
       .use(CopyPlugin, [[
-        { from: publicDir, to: outDir }
-      ]])
+        { from: publicDir, to: outDir },
+      ]]);
   }
 
   if (!cliOptions.debug) {
@@ -45,13 +45,13 @@ module.exports = function createServerConfig (options, cliOptions) {
       .use(WebpackBar, [{
         name: 'Server',
         color: 'blue',
-        compiledIn: false
-      }])
+        compiledIn: false,
+      }]);
   }
 
   if (options.siteConfig.chainWebpack) {
-    options.siteConfig.chainWebpack(config, true /* isServer */)
+    options.siteConfig.chainWebpack(config, true /* isServer */);
   }
 
-  return config
-}
+  return config;
+};

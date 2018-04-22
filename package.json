@@ -2,14 +2,11 @@
   "name": "michetta",
   "version": "0.0.1",
   "description": "Michetta is a simple static site generator based on Vue SFC and SSR for templating.",
-  "main": "lib/index.js",
-  "bin": {
-    "michetta": "bin/michetta.js"
-  },
+  "main": "index.js",
   "scripts": {
-    "dev": "node bin/michetta dev docs",
-    "build": "node bin/michetta build docs",
-    "lint": "eslint bin lib test",
+    "dev": "xxxxx node bin/michetta dev docs",
+    "build": "node ./index",
+    "lint": "xxxxx eslint bin lib test",
     "prepublishOnly": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
   },
   "repository": {

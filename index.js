@@ -16,4 +16,6 @@ if (!semver.satisfies(process.version, requiredVersion)) {
 const path = require('path');
 const build = require('./lib/build');
 
-build(path.resolve('.'));
+exports.build = build;
+
+// build(path.resolve('.'));

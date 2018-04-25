@@ -9,4 +9,4 @@ the goal is to generate pure HTML without any Vue.js script, but leveraging the 
 Michetta [miˈketta] (also known as rosetta [roˈzetta] "small rose") is an Italian white bread, recognizable from its bulged shape.
 
 ## How it works
-Leverage Vue.js SSR without generatig any client-side assets.
+Leverage Vue.js SSR without generating any client-side assets.

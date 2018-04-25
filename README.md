@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/aozora/michetta" target="_blank">
-    <img width="280" src="https://github.com/aozora/michetta/blob/master/logo.svg" alt="logo">
+    <img width="200" height="164" src="https://github.com/aozora/michetta/blob/master/logo.svg" alt="logo">
   </a>
 </p>
 

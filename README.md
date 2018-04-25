@@ -1,5 +1,5 @@
 <p align="center">
-![Michetta Logo](./logo.svg)
+  <img src="https://github.com/aozora/michetta/blob/master/logo.svg" alt="logo">
 </p>
 
 # michetta

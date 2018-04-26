@@ -12,3 +12,4 @@ Michetta [miˈketta] (also known as rosetta [roˈzetta] "small rose") is an Ital
 
 .vuepress/components --> src/components
 
+No frontmatter, since title, desc are set into SSR context

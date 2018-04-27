@@ -1,6 +1,5 @@
 # TODO
 
-* have custom App.vue that define the content layout (header, main, footer)
 * have multiple layouts at page level
   * specify in config.js
 * '.vuepress' folder into options 

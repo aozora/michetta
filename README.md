@@ -10,6 +10,9 @@ Michetta [miˈketta] (also known as rosetta [roˈzetta] "small rose") is an Ital
 
 ## Differences from vuePress
 
-.vuepress/components --> src/components
+Michetta, at its core, it's a fork of VuePress but with some substantial changes:
+* the working folder ".vuepress" has been made dynamic and available in the options as "root folder".
+* the components folder has been moved from ".vuepress/components" to "src/components"
+* at the moment markdown files has been disabled, so no md file can be compiled as Vue component
+* frontmatter data are not available; to extract head meta infos has been introduced Vue-Meta (used also in NuxtJs)
 
-No frontmatter, since title, desc are set into SSR context

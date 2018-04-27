@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" {{{ meta.inject().htmlAttrs.text() }}}>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <!-- vue-meta -->
+  {{{ meta.inject().meta.text() }}}
+  {{{ meta.inject().title.text() }}}
+  {{{ meta.inject().link.text() }}}
+  <!-- /vue-meta -->
+
+  {{{ renderResourceHints() }}}
+  {{{ renderStyles() }}}
+</head>
+<body>
+<!--vue-ssr-outlet-->
+{{{ renderScripts() }}}
+</body>
+</html>

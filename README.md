@@ -63,7 +63,7 @@ Michetta extend the default configuration provided by VuePress, with the followi
 
 Default folder that contains pages, layouts, components, etc. 
 
-### sourcePages
+### sourcePages `TO BE REMOVED`
 
 * type: string
 * default: `pages`

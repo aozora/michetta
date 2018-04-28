@@ -9,8 +9,39 @@ the goal is to generate pure HTML without any client-side framework, leveraging 
 
 Michetta [miˈketta] (also known as rosetta [roˈzetta] "small rose") is an Italian white bread, recognizable from its bulged shape.
 
-## Usage
-[TBC]
+## Getting Started
+
+You should install Michetta as a local dependency:
+```
+# install as a local dependency
+npm install michetta --save
+```
+
+Then, add some scripts to `package.json`:
+
+```
+{
+  "scripts": {
+    "dev": "michetta dev src",
+    "build": "michetta build src"
+  }
+}
+```
+
+You can now start writing with:
+```
+npm run dev
+```
+
+To generate static assets, run:
+```
+npm run build
+```
+
+By default the built files will be in .vuepress/dist, which can be configured via the dest field in .vuepress/config.js. 
+The built files can be deployed to any static file server. See VuePress Deployment Guide for guides on deploying to popular services.
+
+
 
 ## Differences from vuePress
 
